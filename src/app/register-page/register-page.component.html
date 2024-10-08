@@ -1,0 +1,136 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+<div class="container">
+    <form class="well form-horizontal" [formGroup]="userForms" id="contact_form">
+      <fieldset>
+        <legend>
+            <h2><b>Registration Form</b></h2>
+        </legend>
+        <br>
+  
+        <div class="form-group">
+          <label class="col-md-4 control-label">Name</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" id="name" placeholder="Name" class="form-control" formControlName="name">
+            </div>
+            <div *ngIf="userForms.get('name')?.invalid && userForms.get('name')?.touched">
+              <small class="text-danger" *ngIf="userForms.get('name')?.errors?.['required']">Name is required</small>
+              <small class="text-danger" *ngIf="userForms.get('name')?.errors?.['minlength']">
+                Name must be at least 5 characters long
+              </small>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+            <label class="col-md-4 control-label">E-Mail</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input type="email" id="email" placeholder="E-Mail Address" class="form-control" formControlName="email">
+              </div>
+              <div *ngIf="userForms.get('email')?.invalid && userForms.get('email')?.touched">
+                <small class="text-danger" *ngIf="userForms.get('email')?.errors?.['required']">Email is required</small>
+                <small class="text-danger" *ngIf="userForms.get('email')?.errors?.['email']">Invalid Email Address</small>
+              </div>
+            </div>
+          </div>
+  
+        <div class="form-group">
+          <label class="col-md-4 control-label">Contact No.</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <input type="text" id="phonenumber" placeholder="(204)" class="form-control" formControlName="phonenumber">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Date of Birth</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+              <input type="date" id="dateOfBirth" class="form-control" formControlName="dateOfBirth">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Street Address</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input type="text" id="streetAddress" placeholder="Street Address" class="form-control" formControlName="streetAddress">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Province</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+              <select id="province" class="form-control" formControlName="province">
+                <option value="Alberta">AB</option>
+                <option value="BritishColumbia">BC</option>
+                <option value="Manitoba">MB</option>
+                <option value="NewBrunswick">NB</option>
+                <option value="NewfoundlandAndLabrador">NL</option>
+                <option value="NovaScotia">NS</option>
+                <option value="Ontario">ON</option>
+                <option value="PrinceEdwardIsland">PE</option>
+                <option value="Quebec">QC</option>
+                <option value="Saskatchewan">SK</option>
+                <option value="NorthwestTerritories">NT</option>
+                <option value="Nunavut">NU</option>
+                <option value="Yukon">YT</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Country</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+              <select id="country" class="form-control" formControlName="country">
+                <option value="canada">Canada</option>
+                <option value="usa">United States</option>
+              </select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+              <input type="checkbox" formControlName="terms">
+              <label for="termsAndCondition">Terms and Conditions</label>
+            </div>
+            <div *ngIf="userForms.get('terms')?.invalid && userForms.get('terms')?.touched">
+              <small class="text-danger">You must agree to the terms and conditions</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-success" [routerLink]="['/products']" >
+                    Submit
+                  </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  
+
+<router-outlet> </router-outlet>

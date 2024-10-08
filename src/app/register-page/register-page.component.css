@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin-top: 0;
+    box-sizing: border-box;
+    display:flexbox
+  }
+  
+  body {
+    background: gray no-repeat center fixed;
+    background-size: cover;
+    font-family: Verdana, sans-serif;
+  }
+  
+  .container {
+    margin-top: 400px;
+    background-color: rgb(48, 47, 47);
+    width: 600px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  legend h2 {
+    color: rgb(48, 47, 47);
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    color: rgb(44, 44, 44);
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-group-addon {
+    background-color: #ff6600;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px 0 0 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: #f5f5f5;
+    font-size: 14px;
+  }
+  
+  select.form-control {
+    padding: 8px;
+    background-color: #f5f5f5;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  small.text-danger {
+    color: #ff4d4d;
+    font-size: 12px;
+  }
+  
+  .btn {
+    width: 100%;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .btn:hover {
+    background-color: #e65c00;
+  }
+  
+  input[type="date"] {
+    padding: 9px;
+    border-radius: 0 4px 4px 0;
+    background-color: #f5f5f5;
+    width: 100%;
+  }
+  
+  input[type="text"]:focus, input[type="email"]:focus, select:focus, input[type="date"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.7);
+  }
+  
+  
